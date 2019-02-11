@@ -1,30 +1,28 @@
 #include <iostream>
-#include <iomanip>
 
 int main()
 {
+    // 表示だけならstd::cout　よりも printfの方が速いが，変数の表示のさせ方が少し特殊
+    // 覚えてしまえばかなり簡単なので紹介
+    printf("Hello World\n");
+
     int num = 3;
     std::cout << num << "\n";
-    num = 5;
-    std::cout << num << "\n";
+    printf("num = %d \n", num); // 整数を表示させるときは%d
 
-    bool is_monday = true;
-    std::cout << "明日は月曜日:" << is_monday << "\n";
+    double x = 0.5;
+    std::cout << x << "\n";
+    printf("x = %lf \n", x); // doubleの少数を表示させるときは%lf
 
-    double d_decimal;
-    float f_decimal;
+    std::string words = "Hello World";
+    std::cout << words << "\n";
+    printf("words = %s \n", words.c_str()); // stringの文字を表示させるときは少し特殊で変数に「.c_str()」をつけた上で%s
 
-    d_decimal = 1.23456789012345;
-    f_decimal = 1.23456789012345f;
-    std::cout << "double：" << std::setprecision(15) << d_decimal << " \n";
-    std::cout << "float ：" << std::setprecision(15) << f_decimal << " \n";
-    // 最近のPCでは専ら double 専用の回路が用いられているため、double の方が早く、floatを使うメリットはない
-    // ただし、GPUでは主に float 専用の回路が用いられているため、floatの方が早い
-
+    
     double height, weight;
+
     height = 168.7;
     weight = 68.2;
     std::cout << "あなたの身長は " << height << " cmです\n";
     std::cout << "あなたの体重は " << weight << " kgです\n";
-
 }

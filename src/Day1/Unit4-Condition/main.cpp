@@ -17,41 +17,50 @@ int main()
     bmi = weight * 10000 / (height * height);
     std::cout << "あなたのBMIは " << bmi << " です\n";
 
-    if(bmi < 18.5)
+    if (bmi < 18.5)
     {
         std::cout << "痩せすぎです\n";
     }
-    else if(bmi < 25)
+    else if (bmi < 25)
     {
-        if(bmi == 22)
+        if (bmi == 22)
         {
             std::cout << "The 標準体型\n";
         }
         else
         {
-            std::cout << "普通体型です\n";            
+            std::cout << "普通体型です\n";
         }
     }
-    else 
+    else
     {
-        std::cout << "肥満です\n";        
+        std::cout << "肥満です\n";
+    }
+
+    // bool の変数名は is, has, canなど, 判別がしやすい動詞から始めよう！
+    bool has_iPhone = true;
+
+    if (has_iPhone)
+    {
+        std::cout << "iPhone勢じゃん\n";
+    }
+    else
+    {
+        std::cout << "なかーま\n";
+    }
+
+    int num;
+    std::cout << "整数を入力してね\n";
+    std::cin >> num;
+    if (num % 2 == 0)
+    {
+        std::cout << "偶数です\n";
+    }
+    else
+    {
+        std::cout << "奇数です\n";
     }
 }
-
-// int main()
-// {
-//     // bool の変数名は is, has, canなど, 判別がしやすい動詞から始めよう！
-//     bool has_iPhone = true; 
-
-//     if(has_iPhone)
-//     {
-//         std::cout << "iPhone勢じゃん\n";
-//     }
-//     else 
-//     {
-//         std::cout << "なかーま\n";        
-//     }
-// }
 
 // int main()
 // {

@@ -1,6 +1,7 @@
 #include <iostream>
 
-bool is_satisfied(int x, int y){
+bool is_satisfied(int x, int y)
+{
     int left = 10 * (x + 6) - (7 - 8 * y);
     int right = 699;
     if(left == right)

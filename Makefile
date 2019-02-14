@@ -1,7 +1,7 @@
 CXX					:= clang++
 BUILD_TYPE			:= Debug
 
-PROJECT				:= Day1/Unit2-TypeAndVariable
+PROJECT				:= day1/problem1
 TARGET				:= main
 
 SRCDIR				:= src/$(PROJECT)

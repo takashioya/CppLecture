@@ -1,3 +1,4 @@
-obj/
-output/
+obj/*
+output/*
 .vscode
+!.gitkeep

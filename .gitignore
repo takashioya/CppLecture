@@ -2,4 +2,6 @@ obj/*
 output/*
 bin/*
 .vscode
+pdf/day2/*
+!container.pdf
 !.gitkeep

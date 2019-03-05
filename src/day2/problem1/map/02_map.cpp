@@ -20,7 +20,7 @@ int main()
     }
 
     // keyの検索
-    auto itr = mp.find('a'); // keyが設定されていれば対応するiteratorが、設定されていなければend()へのiteratorが帰る
+    auto itr = mp.find('a'); // keyが設定されていれば対応するiteratorが、設定されていなければend()が帰る
     cout << "検索結果" << endl;
     cout << "key = " << itr->first << ", value = " << itr->second << endl;
 

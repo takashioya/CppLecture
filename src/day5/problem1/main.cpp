@@ -43,14 +43,7 @@ bool is_intersected_line_triangle(Vec2 a, Vec2 b, Vec2 p, Vec2 q, Vec2 r)
     bool c2 = is_intersected_lines(a, b, q, r);
     bool c3 = is_intersected_lines(a, b, r, p);
 
-    if (c1 || c2 || c3)
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
+    return (c1 || c2 || c3);
 }
 
 int main()

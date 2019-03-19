@@ -18,6 +18,7 @@ bool is_intersected_lines(Vec2 a1, Vec2 a2, Vec2 b1, Vec2 b2)
     return (c1 && c2);
 }
 
+// 点が三角形の内部にあるかを判定
 bool isin_triangle(Vec2 a, Vec2 p, Vec2 q, Vec2 r)
 {
     bool c1 = cross(q - p, a - p) > 0;

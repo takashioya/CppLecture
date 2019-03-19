@@ -1,7 +1,7 @@
 CXX					:= clang++
 BUILD_TYPE			:= Debug
 
-PROJECT				:= day4/problem2/insert_sort
+PROJECT				:= day5/problem1
 TARGET				:= main
 
 SRCDIR				:= src/$(PROJECT)

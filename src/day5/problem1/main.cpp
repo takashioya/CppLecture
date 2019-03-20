@@ -8,37 +8,16 @@ double cross(Vec2 a, Vec2 b) // 外積を計算
     return a.x * b.y - a.y * b.x;
 }
 
-// 線分a1_a2と線分b1_b2が交差するかを判定
+// a1, a2を結ぶ直線と線分b1_b2が交差するかを判定
 bool is_intersected_lines(Vec2 a1, Vec2 a2, Vec2 b1, Vec2 b2) 
-{
-    // 線分a1_a2から見て、b1とb2が同じ側にいればfalse、違う側にいればtrue
-    bool c1 = (cross(a2 - a1, b1 - a1) * cross(a2 - a1, b2 - a1)) <= 0; 
-    // 線分b1_b2から見て、a1とa2が同じ側にいればfalse、違う側にいればtrue
-    bool c2 = (cross(b2 - b1, a1 - b1) * cross(b2 - b1, a2 - b1)) <= 0;
-    return (c1 && c2);
+{   // a1_a2を結ぶ直線からみて、b1とb2が同じ側にいればfalse、違う側にいればtrueを返す
+    return (cross(a2 - a1, b1 - a1) * cross(a2 - a1, b2 - a1)) <= 0;
 }
 
-// 点が三角形の内部にあるかを判定
-bool isin_triangle(Vec2 a, Vec2 p, Vec2 q, Vec2 r)
-{
-    bool c1 = cross(q - p, a - p) > 0;
-    bool c2 = cross(r - q, a - q) > 0;
-    bool c3 = cross(p - r, a - r) > 0;
-    // 全て符号が同じかどうかをチェック
-    return (c1 && c2 && c3) || (!c1 && !c2 && !c3);
-}
-
-// 直線と三角形の交差判定を行う
+// a, bを結ぶ直線と三角形の交差判定を行う
 bool is_intersected_line_triangle(Vec2 a, Vec2 b, Vec2 p, Vec2 q, Vec2 r)
 {
-    // 三角形の内部に存在するか判定
-    bool c = (isin_triangle(a, p, q, r) && isin_triangle(b, p, q, r));
-    if(c)
-    {
-        return true;
-    }
-
-    // abとpq, abとqr, abとrpについてそれぞれ交差判定を行う
+    // abを結ぶ直線と線分pq, abを結ぶ直線と線分qr, abを結ぶ直線と線分rpについてそれぞれ交差判定を行う
     bool c1 = is_intersected_lines(a, b, p, q);
     bool c2 = is_intersected_lines(a, b, q, r);
     bool c3 = is_intersected_lines(a, b, r, p);
